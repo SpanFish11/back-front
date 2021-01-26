@@ -5,12 +5,12 @@ import ListFilms from "@/components/ListFilms";
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
-    routes: [
-        {
-            path: '/',
-            name: 'ListFilms',
-            component: ListFilms
-        }
-    ]
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'ListFilms',
+      component: ListFilms
+    }
+  ]
 })

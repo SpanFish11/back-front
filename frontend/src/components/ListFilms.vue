@@ -5,10 +5,12 @@
         <input type="text" class="form-control" v-model="lastName" placeholder="Last Name">
       </div>
       <div class="form-group mx-3">
-        <input type="number" min="1" class="form-control" v-model="releasedFrom" placeholder="Released from">
+        <input type="number" min="1" class="form-control" v-model="releasedFrom"
+               placeholder="Released from">
       </div>
       <div class="form-group">
-        <input type="number" min="1" class="form-control" v-model="releasedUntil" placeholder="Released until">
+        <input type="number" min="1" class="form-control" v-model="releasedUntil"
+               placeholder="Released until">
       </div>
       <button class="btn btn-outline-success mx-3 my-sm-2" type="submit">Search</button>
     </form>
@@ -63,19 +65,19 @@ export default {
       })
       this.loadFilmContent()
     },
-    loadFilmContent() {
-      AXIOS.get('films', {
-        params: {
-          dir: this.$route.query.dir,
-          from: this.$route.query.from,
-          until: this.$route.query.until
-        }
-      }).then(response => {
-        this.films = response.data;
-      })
-          .catch(error => {
-            console.log('ERROR: ' + error.response.data)
-          })
+    async loadFilmContent() {
+      try {
+        const {data} = await AXIOS.get('films', {
+          params: {
+            dir: this.$route.query.dir,
+            from: this.$route.query.from,
+            until: this.$route.query.until
+          }
+        })
+        this.films = data;
+      } catch (error) {
+        console.log('ERROR: ' + error.response.data)
+      }
     }
   },
   mounted() {

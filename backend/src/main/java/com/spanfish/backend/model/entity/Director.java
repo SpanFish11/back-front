@@ -1,25 +1,28 @@
 package com.spanfish.backend.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
+import static javax.persistence.GenerationType.AUTO;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Date;
-import java.util.List;
+import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "director")
-public class Director {
+public class Director implements Serializable {
+
+  private static final long serialVersionUID = -1417909865535655496L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = AUTO)
   private Integer id;
 
   @Column(name = "first_name")

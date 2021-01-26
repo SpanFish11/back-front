@@ -1,8 +1,7 @@
 package com.spanfish.backend.model.responce;
 
-import lombok.Data;
-
 import java.util.Date;
+import lombok.Data;
 
 @Data
 public class FilmResponse {

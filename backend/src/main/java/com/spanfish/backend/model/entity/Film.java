@@ -1,8 +1,8 @@
 package com.spanfish.backend.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
-
+import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,12 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import java.util.Date;
+import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "film")
-public class Film {
+public class Film implements Serializable {
+
+  private static final long serialVersionUID = 3326721008311381027L;
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
