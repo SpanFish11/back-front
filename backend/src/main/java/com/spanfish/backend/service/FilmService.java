@@ -1,10 +1,10 @@
 package com.spanfish.backend.service;
 
-import com.spanfish.backend.model.entity.Film;
-import com.spanfish.backend.model.request.Filter;
 import java.util.List;
+import com.spanfish.backend.model.request.Filter;
+import com.spanfish.backend.model.responce.FilmResponse;
 
 public interface FilmService {
 
-  List<Film> findFilms(Filter filter);
+  List<FilmResponse> findFilms(Filter filter);
 }

@@ -2,7 +2,7 @@ package com.spanfish.backend.model.entity;
 
 import static javax.persistence.GenerationType.AUTO;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 @Data
@@ -19,7 +20,7 @@ import lombok.Data;
 @Table(name = "director")
 public class Director implements Serializable {
 
-  private static final long serialVersionUID = -1417909865535655496L;
+  @Serial private static final long serialVersionUID = -1417909865535655496L;
 
   @Id
   @GeneratedValue(strategy = AUTO)
