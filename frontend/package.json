@@ -11,7 +11,7 @@
     "axios": "^0.21.2",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.12.1",
-    "vue": "^2.6.12",
+    "vue": "^3.0.0",
     "vue-router": "^3.5.1"
   },
   "devDependencies": {
